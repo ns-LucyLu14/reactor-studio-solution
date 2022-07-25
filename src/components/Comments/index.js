@@ -4,7 +4,7 @@ import ErrorFallbackComponent from "../ErrorFallback";
 import ReplyForm from "../ReplyForm";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 
-import { CommentsWrapper, GruopTimestamp } from "./CommentElements";
+import { CommentsContainer, GruopTimestamp } from "./CommentElements";
 import { fetchReplies } from "../../utils/helpers";
 
 // Lazy loading and Fallback definition
@@ -40,7 +40,7 @@ const Comments = () => {
   return (
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <CommentsWrapper>
+        <CommentsContainer>
           {rootComments.map((post, index) => (
             <React.Fragment key={index}>
               <GruopTimestamp>
@@ -59,7 +59,7 @@ const Comments = () => {
               />
             </React.Fragment>
           ))}
-        </CommentsWrapper>
+        </CommentsContainer>
         <ReplyForm />
       </ErrorBoundary>
     </>

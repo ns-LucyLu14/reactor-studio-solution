@@ -1,11 +1,14 @@
 import React from "react";
-import { SpinnerContainer } from "./LoadingSpinnerElements";
+import { SpinnerContainer, SpinnerIcon } from "./LoadingSpinnerElements";
+import { CogIcon } from "@heroicons/react/outline";
 
 const LoadingSpinner = () => {
   return (
     <>
       <SpinnerContainer>
-        <h1>Loading...</h1>
+        <SpinnerIcon>
+          <CogIcon />
+        </SpinnerIcon>
       </SpinnerContainer>
     </>
   );

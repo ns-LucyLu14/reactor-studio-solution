@@ -18,3 +18,12 @@ export const SpinnerContainer = styled.div`
   animation-duration: 1s;
   animation-iteration-count: infinite;
 `;
+
+export const SpinnerIcon = styled.div`
+  height: 40px;
+  width: 40px;
+  @media (min-width: 700px) {
+    height: 50px;
+    width: 50px;
+  }
+`;

@@ -23,7 +23,7 @@ const Comment = ({ comment, replies }) => {
   return (
     <>
       <CommentWrapper>
-        <Image />
+        <Image src={comment.author.picture} />
         <CommentContainer>
           <CommentContent>
             <CommentAuthor>{comment.author.name}</CommentAuthor>

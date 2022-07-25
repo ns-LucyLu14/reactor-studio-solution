@@ -12,9 +12,9 @@ export const GruopTimestamp = styled.div`
   }
 `;
 
-export const CommentsWrapper = styled.ul`
+export const CommentsContainer = styled.ul`
   overflow-y: scroll;
-  margin: 0 auto;
+  overflow-x: hidden;
   max-height: 600px;
 `;
 
@@ -41,23 +41,26 @@ export const ThemeButton = styled.div`
   align-items: center;
   border: 2px solid ${(props) => props.theme.bg.body};
   background: transparent;
+  cursor: pointer;
   color: ${(props) => props.theme.colors.primary};
 `;
 
 export const CommentWrapper = styled.li`
   position: relative;
   display: flex;
+  margin: 0 auto;
   gap: ${(props) => props.theme.spacing.s};
   @media (min-width: 700px) {
     gap: ${(props) => props.theme.spacing.m};
   }
 `;
 
-export const Image = styled.div`
+export const Image = styled.img`
   height: 30px;
   aspect-ratio: 1/1;
   background: lightgreen;
   border-radius: 50%;
+  object-fit: cover;
   @media (min-width: 700px) {
     height: 42px;
   }
@@ -67,7 +70,11 @@ export const CommentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacing.m};
-  width: 80%;
+  width: 100%;
+  padding-right: 0;
+  @media (min-width: 700px) {
+    width: 80%;
+  }
 `;
 
 export const CommentContent = styled.div`
@@ -96,7 +103,7 @@ export const CommentAuthor = styled.p`
 `;
 
 export const CommentText = styled.p`
-  font-size: ${(props) => props.theme.fonts.m};
+  font-size: ${(props) => props.theme.fonts.s};
   color: ${(props) => props.theme.colors.secondary};
   justify-content: flex-start;
   font-weight: 500;
@@ -126,6 +133,7 @@ export const ReplyBadge = styled.p`
   margin-top: -2px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   ::before {
     content: "○";
     font-size: 15px;

@@ -9,7 +9,6 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        transition: ${(props) => props.theme.transition}
     }
     
     body {
@@ -17,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Inter', sans-serif;
         font-style: normal;
         overflow-x: hidden;
+        transition: ${(props) => props.theme.transition}
         
     }
     
@@ -30,15 +30,14 @@ const GlobalStyles = createGlobalStyle`
         max-width: 1032px;
         max-height: 864px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 20px 10px;
         border-radius: 8px;
         background: ${(props) => props.theme.bg.primary};
-
     }
     
 
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 5px;
     }
 
     ::-webkit-scrollbar-track {
@@ -55,6 +54,10 @@ const GlobalStyles = createGlobalStyle`
         .container {
             padding: 32px;
         }
+
+        ::-webkit-scrollbar {
+        width: 8px;
+    }
     }
     
 `;

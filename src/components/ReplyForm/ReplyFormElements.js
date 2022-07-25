@@ -2,16 +2,18 @@ import styled from "styled-components";
 
 export const FormContainer = styled.div`
   width: 100%;
-  margin: 0 auto;
   background: ${(props) => props.theme.bg.secondary};
   z-index: 500;
-  height: 62px;
+  height: 50px;
   padding: ${(props) => props.theme.padding.xs};
   border: 1px solid #d8dee7;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (min-width: 700px) {
+    height: 62px;
+  }
 `;
 
 export const MediaBtn = styled.div`
@@ -23,14 +25,17 @@ export const MediaBtn = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  font-size: ${(props) => props.theme.fonts.l};
+  font-size: ${(props) => props.theme.fonts.s};
+  cursor: pointer;
+  @media (min-width: 700px) {
+    font-size: ${(props) => props.theme.fonts.l};
+  }
 `;
 
 export const CommentInput = styled.input`
   color: #333333;
   border: none;
   height: 100%;
-  /* width: 100%; */
   flex-grow: 1;
   padding: 0 ${(props) => props.theme.padding.s};
   background: transparent;
@@ -39,7 +44,7 @@ export const CommentInput = styled.input`
 `;
 
 export const SendButton = styled.button`
-  /* width: 196px; */
+  cursor: pointer;
   height: 100%;
   display: flex;
   color: ${(props) => props.theme.bg.secondary};
@@ -48,7 +53,7 @@ export const SendButton = styled.button`
   justify-content: center;
   gap: ${(props) => props.theme.spacing.s};
   border-radius: 6px;
-  padding: ${(props) => props.theme.padding.s};
+  padding: ${(props) => props.theme.padding.xs};
   font-weight: 600;
 `;
 
@@ -58,16 +63,18 @@ export const SendIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotateZ(45deg);
+  transform: rotateZ(45deg) translateY(-2px);
   @media (min-width: 700px) {
     height: 20px;
     width: 20px;
+    transform: rotateZ(45deg) translateY(-4px);
   }
 `;
 
-export const ButtonText = styled.p`
+export const ButtonText = styled.span`
   font-size: ${(props) => props.theme.fonts.xs};
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
+  @media (min-width: 700px) {
+    display: flex;
+  }
 `;
