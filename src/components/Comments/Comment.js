@@ -46,14 +46,8 @@ const Comment = ({ comment, replies }) => {
           {isReplying && <ReplyForm />}
           {replies[0] && <CommentThread />}
           <ul>
-            {replies.map((reply, index) => (
-              <Comment
-                key={reply.id}
-                comment={reply}
-                isReplying={isReplying}
-                replyHandler={{}}
-                replies={[]}
-              />
+            {replies.map((reply) => (
+              <Comment key={reply.id} comment={reply} replies={[]} />
             ))}
           </ul>
         </CommentContainer>
